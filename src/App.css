@@ -8,18 +8,47 @@ h1 {
 }
 
 .app {
-  background-color: #f3f3f3;
-  display: flex;
+  background-color: #ff00ff;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  width: 1360px;
+  height: 800px;
 }
 
 .container {
-  background-color: #fff;
+  background-color: #ffff00;
+  margin: auto;
   border-radius: 5px;
   padding: 30px;
-  text-align: center;
+  width: 1360px;
+  height: 800px;
+}
+
+.list {
+  margin: auto;
+  margin-top: 20px;
+  float: right;
+  background-color: #993300;
+  width: 960px;
+  height: 750px;
+}
+
+.creator {
+
+  background-color: #ccffcc;
+  width: 400px;
+  height: 190px;
+}
+
+.tasktext{
+  border-color: #000000;
+}
+
+.status {
+  float: left;
+  background-color: #660066;
+  width: 400px;
+  height: 560px;
 }
 
 .button {
@@ -36,7 +65,9 @@ h1 {
   background-color: #27ae60;
 }
 
-.buttonPrimary {
-  composes: button;
-  background-color: #2980b9;
+.taskdiv {
+  background-color: #ffffff;
+  width: 75px;
+  height: 50px;
+  border-style: solid;
 }

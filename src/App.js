@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './App.css'
+import TaskWrapper from './containers/TaskWrapper'
 
 export default class App extends Component {
   state = {
@@ -14,13 +15,7 @@ export default class App extends Component {
     return (
       <div className={styles.app}>
         <div className={styles.container}>
-          <h1>{this.state.message}</h1>
-          <button
-            className={styles.buttonSuccess}
-            onClick={() => this.handleToggleMessage('Hello World!!! :D')}>Hello</button>
-          <button
-            className={styles.buttonPrimary}
-            onClick={() => this.handleToggleMessage('Bye World!!! :(')}>Bye</button>
+          <TaskWrapper />
         </div>
       </div>
     )
