@@ -1,6 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import multi from 'redux-multi'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import reducers from './reducers'
+import App from './App'
 
-const root = document.getElementById('root');
-root ? ReactDOM.render(<App />, root) : false;
+const createStoreWithMiddleware = applyMiddleware(multi)(createStore)
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
