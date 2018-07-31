@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fuzzy-search": "^2.1.0",
+    "fuzzysearch": "^1.0.3",
     "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

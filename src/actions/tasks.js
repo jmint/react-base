@@ -2,7 +2,7 @@ const ADD_TASK = 'ADD_TASK'
 const REMOVE_TASK = 'REMOVE_TASK'
 const TOGGLE_SELECTED_TASK = 'TOGGLE_SELECTED_TASK'
 
-const addTask = (title) => {
+const addTask = (task) => {
   return { 
     type: ADD_TASK, 
     task: { 

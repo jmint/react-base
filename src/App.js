@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import styles from './App.css'
-import TaskWrapper from './containers/TaskWrapper'
+import TaskCreator from './components/TaskCreator'
+import TaskStatus from './components/TaskStatus'
+import TaskList from './components/TaskList'
+
 
 export default class App extends Component {
   state = {
@@ -15,7 +18,10 @@ export default class App extends Component {
     return (
       <div className={styles.app}>
         <div className={styles.container}>
-          <TaskWrapper />
+          <TaskList />
+          <TaskCreator />
+          <TaskStatus />
+          
         </div>
       </div>
     )

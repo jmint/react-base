@@ -3,37 +3,27 @@ import styles from '../App.css'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addTask, removeTask } from '../actions/tasks'
+import { addFilterTask, removeFilterTask } from '../actions/filteredtasks'
 
-export default class TaskCreator extends Component {
-  onSubmit = e => {
+class TaskCreator extends Component {
+  onClick = e => {
     e.preventDefault()
     this.props.addTask(this.newTask.value)
+    this.props.addFilterTask(this.newTask.value)
     this.newTask.value = '';
-  }
-
-  handleChange = (tasktext) => {
-    this.setState({ tasktext })
-  }
-
-  handleTaskText = (task) => {
-    this.setState({task})
-    console.log(this.state.task);
-    this.props.onCreateTask(task)
   }
 
   render() {
     return(
       <div className={styles.creator}>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onClick}>
           <input
-            value={this.state.tasktext}
             className={styles.tasktext}
             placeholder = "Enter Task"
-            onChange={e => this.handleChange(e.target.value)}
+            ref={node => this.newTask = node}
           />
           <button
-            className={styles.buttonSuccess}
-            ref={node => this.newTask = node}>Create Task</button>
+            className={styles.buttonSuccess}>Create Task</button>
         </form>
       </div>
     )
@@ -42,7 +32,7 @@ export default class TaskCreator extends Component {
 
 const mapStateToProps = state => {
   return {
-    selectedTask: state.selectedTask
+    tasks: state.tasks
   }
 }
 
@@ -51,8 +41,10 @@ const mapDispatchToProps = (dispatch) => {
     bindActionCreators({ 
       addTask,
       removeTask,
+      addFilterTask,
+      removeFilterTask,
     }, dispatch)
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(TaskCreator)

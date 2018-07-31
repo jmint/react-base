@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import tasks from './tasks'
-import task from './task'
+import tasks from './Tasks'
+import filteredtasks from './filteredTasks'
 
 const reducers = combineReducers({
   tasks,
-  selectedTask: task,
+  filteredtasks,
 })
 
 export default reducers

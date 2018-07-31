@@ -22,8 +22,7 @@ export default class TaskWrapper extends Component {
       <div>
         <h1>Contenedor</h1>
         <TaskCreator onCreateTask={debounceCreateTask}/>
-        <TaskStatus />
-        <TaskList tasks={tasks}/>
+        
       </div>
     )
   }
