@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 class TaskSearch extends Component {
 
     UpdT(text) {
-        console.log(text);
         const tasksf = this.props.tasks.filter(task => task.task.includes(text,0))
         console.log(tasksf);
         this.props.updateFilterTask(tasksf)
@@ -15,8 +14,7 @@ class TaskSearch extends Component {
     }
 
     onChange = (e) =>{
-        console.log(this.filtertextTask.value);
-        const sw = this.filtertextTask.value.length ? this.UpdT(this.filtertextTask.value) : console.log('vacio')
+        const sw = this.filtertextTask.value.length ? this.UpdT(this.filtertextTask.value) : this.props.updateFilterTask(this.props.tasks)
 
     }
 

@@ -2,6 +2,7 @@ const ADD_FILTER_TASK = 'ADD_FILTER_TASK'
 const REMOVE_FILTER_TASK = 'REMOVE_FILTER_TASK'
 const UPDATE_FILTER_TASK = 'UPDATE_FILTER_TASK'
 const TOGGLE_SELECTED_TASK = 'TOGGLE_SELECTED_TASK'
+const RESET_TASK = 'RESET_TASK'
 
 const addFilterTask = (task) => {
   return { 
@@ -16,7 +17,7 @@ const addFilterTask = (task) => {
 const updateFilterTask = (tasks) => {
   return {
     type: UPDATE_FILTER_TASK,
-    tasks: {tasks},
+    tasks: tasks,
   }
 }
 

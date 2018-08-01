@@ -15,7 +15,16 @@ class TaskList extends Component {
         </div>
         {
             this.props.filteredtasks.map(task =>{
-              return <div className={styles.taskdiv}>{task.task}</div>
+              return (
+                <div className={styles.taskdiv}>
+                  {task.task}
+                  <form>
+                  <input type="radio" value="To Do" name="To Do" />To Do &nbsp;
+                  <input type="radio" value="To Do" name="To Do" />Doing &nbsp;
+                  <input type="radio" value="To Do" name="To Do" />Done
+                  </form>
+                </div>
+                )
             })
         }
       </div>

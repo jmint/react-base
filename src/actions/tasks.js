@@ -3,11 +3,12 @@ const REMOVE_TASK = 'REMOVE_TASK'
 const TOGGLE_SELECTED_TASK = 'TOGGLE_SELECTED_TASK'
 
 const addTask = (task) => {
-  return { 
-    type: ADD_TASK, 
-    task: { 
-      task, 
-      id: Date.now() 
+  return {
+    type: ADD_TASK,
+    task: {
+      task,
+      status: "TODO",
+      id: Date.now()
     }
   }
 }
