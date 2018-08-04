@@ -3,27 +3,29 @@ import styles from '../App.css'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addTask, removeTask } from '../actions/tasks'
-import { addFilterTask, removeFilterTask } from '../actions/filteredtasks'
+import { updateFilterTask } from '../actions/filteredtasks'
 
 class TaskCreator extends Component {
+ 
   onClick = e => {
     e.preventDefault()
     this.props.addTask(this.newTask.value)
-    this.props.addFilterTask(this.newTask.value)
     this.newTask.value = '';
+    
   }
 
   render() {
+    
     return(
       <div className={styles.creator}>
         <form onSubmit={this.onClick}>
           <input
-            className={styles.tasktext}
+            className="form-control"
             placeholder = "Enter Task"
             ref={node => this.newTask = node}
           />
           <button
-            className={styles.buttonSuccess}>Create Task</button>
+            className="btn btn-primary">Create Task</button>
         </form>
       </div>
     )
@@ -41,8 +43,7 @@ const mapDispatchToProps = (dispatch) => {
     bindActionCreators({ 
       addTask,
       removeTask,
-      addFilterTask,
-      removeFilterTask,
+      updateFilterTask,
     }, dispatch)
   )
 }

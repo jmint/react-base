@@ -3,7 +3,7 @@ import styles from './App.css'
 import TaskCreator from './components/TaskCreator'
 import TaskStatus from './components/TaskStatus'
 import TaskList from './components/TaskList'
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 export default class App extends Component {
   state = {
@@ -17,12 +17,12 @@ export default class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <div className={styles.container}>
+        
           <TaskList />
           <TaskCreator />
           <TaskStatus />
           
-        </div>
+      
       </div>
     )
   }

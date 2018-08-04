@@ -1,22 +1,25 @@
-const ADD_FILTER_TASK = 'ADD_FILTER_TASK'
-const REMOVE_FILTER_TASK = 'REMOVE_FILTER_TASK'
+const ADD_TASK = 'ADD_TASK'
 const UPDATE_FILTER_TASK = 'UPDATE_FILTER_TASK'
-
+const UPDATASK = 'UPDATASK'
 
 const initialState = [
-    { task: 'prueba', id: 1, status:''},
+  { task: 'prueba', id: 1, stat:'TODO'},
 ]
 
 const filteredtasks = (state = initialState, action) => {
-    const acc = action.tasks
+  const acc = action.tasks
 
     switch (action.type) {
-      case ADD_FILTER_TASK:
+      case ADD_TASK:
         return [...state, action.task]
-      case REMOVE_FILTER_TASK:
-        return state.filter(task => task.id !== action.id)
       case UPDATE_FILTER_TASK:
         return acc
+      case UPDATASK:
+      return state.map(task => {
+        return task.id === action.id ?
+        Object.assign({}, task, action.stat) : 
+        task
+      })
       default:
         return state
     }

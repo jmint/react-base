@@ -1,3 +1,0 @@
-const TO_DO_TASK = 'TO_DO_TASK'
-const DOING_TASK = 'DOING_TASK'
-const DONE_TASK = 'DONE_TASK'

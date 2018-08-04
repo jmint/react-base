@@ -8,8 +8,7 @@ h1 {
 }
 
 .app {
-  background-color: #F0F1FB;
-  border-style: groove;
+  
   margin: auto;
   border-radius: 5px;
   align-items: center;
@@ -20,25 +19,27 @@ h1 {
 
 .list {
   float: right;
-  background-color: #F0F1FB;
   border-style: groove;
   width: 65%;
-  height: 756px;
+  height: 750px;
+  padding: 10px;
 }
 
 .creator {
   position: relative;
-  background-color: #F0F1FB;
   border-style: groove;
   align-items: center;
   justify-content: center;
-  width: 34%;
+  width: 35%;
   height: 190px;
+  padding: 10px;
 }
 
-.tasktext{
-  border-color: #000000;
+.container {
+  text-align:center;
+  padding: 10px;
 }
+
 
 .button {
   border: 0;
@@ -51,20 +52,29 @@ h1 {
 
 .status {
   float: left;
-  background-color: #F0F1FB;
   border-style: groove;
-  width: 34%;
+  width: 35%;
   height: 560px;
+  padding: 10px;
 }
 
-.buttonSuccess {
-  composes: button;
-  background-color: #27ae60;
+.button-success {
+  margin: 15px;
+  padding: 15px;
 }
 
 .taskdiv {
-  background-color: #ffffff;
-  width: 175px;
-  height: 80px;
-  border-style: solid;
+  margin:auto;
+  max-width: 22rem;
+  border-style: groove;
+  
+}
+
+.buttong{
+  margin:auto;
+  padding: 10px;
+}
+
+.bod{
+  text-align:center;
 }
