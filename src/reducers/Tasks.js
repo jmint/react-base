@@ -7,7 +7,7 @@ const initialState = [
 ]
 
 const tasks = (state = initialState, action) => {
-
+    
     switch (action.type) {
       case ADD_TASK:
         return [...state, action.task]
@@ -15,7 +15,7 @@ const tasks = (state = initialState, action) => {
         return state.filter(task => task.id !== action.id)
       case UPDATASK:
         return state.map(task => {
-          return task.id === action.id ?
+          return task.id == action.id ?
           Object.assign({}, task, action.stat) : 
           task
         })

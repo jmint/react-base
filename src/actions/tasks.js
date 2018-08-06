@@ -28,6 +28,7 @@ const removeTask = (id) => {
 }
 
 const updaTask = (id, stat) => {
+  
   return{
       type: UPDATASK,
       id,
