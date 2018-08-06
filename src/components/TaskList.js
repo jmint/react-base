@@ -31,9 +31,9 @@ class TaskList extends Component {
     
 }
 
-componentWillMount() {
-  this.props.updateFilterTask(this.props.tasks)
-}
+  componentWillReceiveProps(tasks){
+    this.props.updateFilterTask(this.props.tasks)
+  }
   
   render() {
     
