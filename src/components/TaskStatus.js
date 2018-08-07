@@ -3,10 +3,11 @@ import styles from '../App.css'
 import { connect } from 'react-redux'
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { updateFilterTask } from '../actions/filteredtasks'
 
 class TaskStatus extends Component {
   onChange = (e) => {
-    console.log("click");
+    updateFilterTask()
   }
 
   render() {
@@ -34,4 +35,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps,)(TaskStatus)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    updateFilterTask,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TaskStatus)

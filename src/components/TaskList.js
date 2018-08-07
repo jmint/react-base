@@ -6,7 +6,6 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { updaTask } from '../actions/tasks'
 import { updateFilterTask } from '../actions/filteredtasks'
 import { bindActionCreators } from 'redux'
-import tasks from '../reducers/Tasks';
 
 class TaskList extends Component {
   
@@ -28,12 +27,9 @@ class TaskList extends Component {
         e
     }
     
-    
 }
 
-  componentWillReceiveProps(tasks){
-    this.props.updateFilterTask(this.props.tasks)
-  }
+
   
   render() {
     
