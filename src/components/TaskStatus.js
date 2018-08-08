@@ -4,10 +4,25 @@ import { connect } from 'react-redux'
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { updateFilterTask } from '../actions/filteredtasks'
+import { bindActionCreators } from 'redux'
 
 class TaskStatus extends Component {
+  
   onChange = (e) => {
-    updateFilterTask()
+    var filstat = ""
+    switch(e){
+      case 1:
+        filstat = "TODO"
+        break;
+      case 2:
+        filstat = "DOING"
+        break;
+      case 3:
+        filstat = "DONE"
+        break;
+    }
+    const tasks_s =  this.props.tasks.filter(task => task.stat == filstat)
+    this.props.updateFilterTask(tasks_s)
   }
 
   render() {
@@ -20,9 +35,9 @@ class TaskStatus extends Component {
           onChange={this.onChange}
           name="rad_stat"
         >
-          <ToggleButton value={1}>To Do</ToggleButton>
-          <ToggleButton value={2}>Doing</ToggleButton>
-          <ToggleButton value={3}>Done </ToggleButton>
+          <ToggleButton value={1} onChange={this.onChange} >To Do</ToggleButton>
+          <ToggleButton value={2} onChange={this.onChange} >Doing</ToggleButton>
+          <ToggleButton value={3} onChange={this.onChange} >Done </ToggleButton>
       </ToggleButtonGroup>
       </div>
     )
@@ -31,14 +46,18 @@ class TaskStatus extends Component {
 
 const mapStateToProps = state => {
   return {
-    filteredtasks : state.filteredtasks
+    tasks: state.tasks,
+    filteredtasks : state.filteredtasks,
   }
 }
 
+
 const mapDispatchToProps = (dispatch) => {
-  return{
-    updateFilterTask,
-  }
+  return(
+    bindActionCreators({
+      updateFilterTask,
+    }, dispatch)
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskStatus)
