@@ -45,23 +45,21 @@ class TaskList extends Component {
            {
               this.props.filteredtasks.map(task =>{
                 return (
-                  <div className="card bg-light mb-3" className={styles.taskdiv}>
+                  <div className={`row ${styles.taskdiv}`}>
                     
-                    <div className="card-body" className={styles.bod}>
-                      <h3 className="card-header">{task.task}</h3>
+                      <h2>{task.task}</h2>
                           <div className="btn-group btn-group-toggle" id={task.id} data-toggle="buttons" ref = {node => this.radsel = node}>
-                            <label className="btn btn-secondary active">
-                                <input type="radio" name="options" id={task.id} value={1} ref = {node => this.radsel1 = node} onChange={this.onChange} checked={task.stat=="TODO"}/>To Do
+                            <label className={`btn btn-secondary ${task.stat==='TODO'? 'active':''}`}>
+                                <input type="radio" name="options" id={task.id} value={1} ref = {node => this.radsel1 = node} onChange={this.onChange} />To Do
                             </label>
-                            <label className="btn btn-secondary active">
-                                <input type="radio" name="options" id={task.id} value={2} ref = {node => this.radsel2 = node} onChange={this.onChange} checked={task.stat=="DOING"}/>Doing
+                            <label className={`btn btn-secondary ${task.stat==='DOING'?'active':''} `}>
+                                <input type="radio" name="options" id={task.id} value={2} ref = {node => this.radsel2 = node} onChange={this.onChange} />Doing
                             </label>
-                            <label className="btn btn-secondary active">
-                                <input type="radio" name="options" id={task.id} value={3} ref = {node => this.radsel3 = node} onChange={this.onChange} checked={task.stat=="DONE"}/>Done
+                            <label className={`btn btn-secondary ${task.stat==='DONE'?'active':''}`}>
+                                <input type="radio" name="options" id={task.id} value={3} ref = {node => this.radsel3 = node} onChange={this.onChange} />Done
                             </label>
                           </div>
-                    </div>
-                      
+                    
                   </div>
                   )
               })
